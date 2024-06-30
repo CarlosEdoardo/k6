@@ -6,7 +6,7 @@ RUN apk --no-cache add git=~2
 RUN CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go build -trimpath -o /usr/bin/k6
 
 # Runtime stage
-FROM alpine:3.18 as release
+FROM alpine:3 as release
 
 # hadolint ignore=DL3018
 RUN apk add --no-cache ca-certificates && \
